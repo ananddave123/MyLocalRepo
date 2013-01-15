@@ -46,7 +46,9 @@ namespace AnandApp
             {
                 TextObj.Focus();
                 TextObj.RaiseClickEvent();
+// below line fails
                 keyboard.Enter("Harriet");
+// even below commented line fails
                 //TextObj.Enter(val);
                 //TextObj.BulkText = "My simple Text";
                 //Keyboard.Instance.Enter("my simple");
@@ -63,6 +65,7 @@ namespace AnandApp
              table = win.Get<Table>(SearchCriteria.ByAutomationId("grdDisplay"));
             TableRows rows = table.Rows;
             row = rows[0];
+// below line fails even though it is identified in Spy
             TableCell cell = row.Cells[0];
             String ab = cell.Value.ToString();
             Console.WriteLine(ab + " Cell Data");
